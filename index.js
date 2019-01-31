@@ -5,8 +5,6 @@ var buttonLen = document.querySelectorAll(".drum").length;
 for (var index = 0; index < buttonLen; index++) {
     // document.querySelectorAll(".drum")[index].addEventListener("click", handleClick); //we pass function without ()
     document.querySelectorAll(".drum")[index].addEventListener("click", function () { // or use anon function
-        // this.style.color = "white"; // or -> this.classList.add("button-pressed");
-        // console.log(this);
         var buttonInnerHtml = this.innerHTML;
         playDrumSound(buttonInnerHtml);
         buttonAnimation(buttonInnerHtml);
@@ -15,7 +13,7 @@ for (var index = 0; index < buttonLen; index++) {
 
 // Detecting keyboard press
 
-document.addEventListener("keypress", function(event) { //"event" is't a must, can be "a" for expl.
+document.addEventListener("keypress", function(event) { //"event" is't a must, can be "a" for exmpl.
     playDrumSound(event.key);
     buttonAnimation(event.key);
 });
@@ -63,6 +61,8 @@ function playDrumSound(key) {
             break;
     }
 }
+
+// Button Animation Function
 
 function buttonAnimation(currentKey) {
     var activeButton = document.querySelector("." + currentKey);
