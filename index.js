@@ -13,7 +13,7 @@ for (var index = 0; index < buttonLen; index++) {
 
 // Detecting keyboard press
 
-document.addEventListener("keypress", function(event) { //"event" is't a must, can be "a" for exmpl.
+document.addEventListener("keydown", function(event) { //"event" is't a must, can be "a" for exmpl.
     playDrumSound(event.key);
     buttonAnimation(event.key);
 });
